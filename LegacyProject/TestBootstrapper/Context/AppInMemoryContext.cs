@@ -1,29 +1,30 @@
-﻿using System;
-using System.Data.Entity;
-using System.Linq;
-using Effort;
+﻿using Effort;
 using Effort.Provider;
 using Persistence.Context;
 using Persistence.Entities;
+using System;
 
 namespace TestBootstrapper.Context
 {
-    public class AppInMemoryContext : DbContext, IContext
+    public class AppInMemoryContext : AppDbContext
     {
-        private static readonly EffortConnection Connection = 
+        private static readonly EffortConnection Connection =
             DbConnectionFactory.CreateTransient();
 
-        private static bool IsDataSeeded;
+        private static bool _isDataSeeded;
 
-        public AppInMemoryContext():base(Connection, false)
+        public AppInMemoryContext()
+            : base(Connection, false)
         {
             Seed();
         }
 
         private void Seed()
         {
-            if (IsDataSeeded)
+            if (_isDataSeeded)
+            {
                 return;
+            }
 
             Customers.Add(
                 new Customer
@@ -76,10 +77,7 @@ namespace TestBootstrapper.Context
             );
 
             SaveChanges();
-            IsDataSeeded = true;
+            _isDataSeeded = true;
         }
-
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Address> AddressList { get; set; }
     }
 }

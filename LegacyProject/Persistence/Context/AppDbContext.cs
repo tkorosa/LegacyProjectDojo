@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Persistence.Entities;
+using System.Data.Common;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Persistence.Entities;
 
 namespace Persistence.Context
 {
@@ -13,7 +9,13 @@ namespace Persistence.Context
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Address> AddressList { get; set; }
 
-        public AppDbContext() : base("ConectionStringName") { }
+        public AppDbContext()
+            : base("ConectionStringName")
+        { }
+
+        public AppDbContext(DbConnection existingConnection, bool contextOwnsConnection)
+            : base(existingConnection, contextOwnsConnection)
+        { }
 
     }
 }
