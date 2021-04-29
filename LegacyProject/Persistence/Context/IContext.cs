@@ -12,7 +12,6 @@ namespace Persistence.Context
     {
         DbSet<Customer> Customers { get; set; }
         DbSet<Address> AddressList { get; set; }
-        
         int SaveChanges();
     }
 }

@@ -107,9 +107,9 @@
       <Project>{DE7BD0BB-C4B5-464D-86D5-44A04A8FC978}</Project>
       <Name>Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestBootstrapper\TestBootstrapper.csproj">
+    <ProjectReference Include="..\TestBootstrapper\DojoBootstrapper.csproj">
       <Project>{CE6CF176-27CB-4E0D-ADB6-6D1C93C913F5}</Project>
-      <Name>TestBootstrapper</Name>
+      <Name>DojoBootstrapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

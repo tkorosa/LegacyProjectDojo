@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacBootstrapper", "AutofacBootstrapper\AutofacBootstrapper.csproj", "{BF9DA302-A13D-4D2E-A08C-0598DCE08D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBootstrapper", "TestBootstrapper\TestBootstrapper.csproj", "{CE6CF176-27CB-4E0D-ADB6-6D1C93C913F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DojoBootstrapper", "TestBootstrapper\DojoBootstrapper.csproj", "{CE6CF176-27CB-4E0D-ADB6-6D1C93C913F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Service\Business.csproj", "{DE7BD0BB-C4B5-464D-86D5-44A04A8FC978}"
 EndProject
