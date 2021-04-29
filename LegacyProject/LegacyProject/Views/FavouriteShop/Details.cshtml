@@ -1,0 +1,61 @@
+﻿@model Persistence.Entities.Customer
+
+@{
+    ViewBag.Title = "Lieblingsshop Adresse";
+}
+
+<h2>Lieblingsshop Adresse</h2>
+
+<div>
+    <h4>Adresse</h4>
+    <hr />
+    @if (Model.FavouriteShopZip == 0)
+    {
+        <span>Kein Lieblingsshop angegeben</span><p/>
+    }
+    else
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FavouriteShopStreetText)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FavouriteShopStreetText)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FavouriteShopZip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FavouriteShopZip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FavouriteShopCity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FavouriteShopCity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FavouriteShopCountry)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FavouriteShopCountry)
+            </dd>
+
+        </dl>
+    }
+</div>
+<p>
+    @if (Model.FavouriteShopZip == 0)
+    {
+        @Html.ActionLink("Bearbeiten", "Edit", new {id = Model.Id}) 
+        @Html.Raw(" | ")
+    }
+    @Html.ActionLink("Zurück", "Index")
+</p>

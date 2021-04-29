@@ -1,0 +1,61 @@
+﻿@model Persistence.Entities.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Kundendetails</h2>
+
+<div>
+    <h4>Kundendetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerFirstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerFirstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerAddress.StreetText)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddress.StreetText)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerAddress.Zip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddress.Zip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerAddress.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddress.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerAddress.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddress.Country)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Bearbeiten", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Adresse", "Details", "Address", new { id = Model.CustomerAddress.Id }, null) |
+    @Html.ActionLink("Lieblingsshop", "Details", "FavouriteShop", new { id = Model.Id }, null) |
+    @Html.ActionLink("Zurück", "Index")
+</p>

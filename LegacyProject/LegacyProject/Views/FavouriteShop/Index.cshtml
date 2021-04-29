@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Persistence.Entities.Customer>
+
+@{
+    ViewBag.Title = "Lieblingsshops";
+}
+
+<h2>Lieblingsshops</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FavouriteShopStreetText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FavouriteShopZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FavouriteShopCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FavouriteShopCountry)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FavouriteShopStreetText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FavouriteShopZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FavouriteShopCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FavouriteShopCountry)
+        </td>
+        <td>
+            @Html.ActionLink("Bearbeiten", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Löschen", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
